@@ -19,6 +19,15 @@
      <ion-button (click)="openBrowser()"> Open Browser</ion-button>
      <ion-button (click)="captureImage()">Capture Image</ion-button>
      <ion-button (click)="info()">Get Baterry Info</ion-button>
+     <ion-list>
+       <ion-item *ngFor="let c of contacts">
+         <ion-label>{{ c.displayName }}
+           <p>
+             {{ c.phoneNumbers[0] }}
+           </p>
+         </ion-label>
+       </ion-item>
+     </ion-list>
     </ion-card-Title>
    </ion-card-header>
  </ion-card>

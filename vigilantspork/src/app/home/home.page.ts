@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Plugins, CameraResultType } from '@capacitor/core';
 
-const { Browser, Geolocation, Camera, Device } = Plugins;
+const { Browser, Geolocation, Camera, Device, CapContacts } = Plugins;
+import { Contacts } from '@capacitor-comunity/contacts'; 
+import { isPlatform } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +14,21 @@ export class HomePage {
 
   constructor() {
     this.getCurrentPosition();
+    this.loadContacts();
+  }
+
+  async loadContacts() {
+    if (isPlatform('android')) {
+      let permission = await CapContacts.getPermissions();
+      if (!permission.granted) {
+        return;
+      }
+    }
+
+    CapContacts.getContacts().then(result => {
+      console.log(result);
+      this.contacts = result.contacts;
+    });
   }
 
   async getCurrentPosition() {

@@ -1,0 +1,7 @@
+{
+  "name": "vigilantspork",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

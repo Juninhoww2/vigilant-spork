@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">vigilantspork</string>
+    <string name="title_activity_main">vigilantspork</string>
+    <string name="package_name">com.devdactic.capacourse</string>
+    <string name="custom_url_scheme">com.devdactic.capacourse</string>
+</resources>
